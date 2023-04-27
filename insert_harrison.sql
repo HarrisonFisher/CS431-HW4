@@ -1,6 +1,7 @@
-
+-- Set the search path to Project1 and public schemas
 SET search_path TO Project1, public;
 
+-- Insert records into Airline table
 INSERT INTO Project1.Airline (Airline_ID, Airline_Name)
 VALUES
 (1, 'Southwest'),
@@ -9,6 +10,7 @@ VALUES
 (4, 'ANA (All Nippon Airways)'),
 (5, 'Air New Zealand');
 
+-- Insert records into Airport table
 INSERT INTO Project1.Airport (Airport_ID, Airport_Name, Airport_City)
 VALUES
 (1, 'Denver International Airport', 'Denver'),
@@ -17,6 +19,7 @@ VALUES
 (4, 'San Francisco International Airport', 'San Francisco'),
 (5, 'George Bush Intercontinental Airport', 'Houston');
 
+-- Insert records into Flight table
 INSERT INTO Project1.Flight (Flight_No, Airline_ID, Plane_Type, Departed, Arrived, Early, Late, Remarks)
 VALUES
 ('2473', 1, '?', TRUE, FALSE, FALSE, FALSE, 'Departed'),
@@ -26,18 +29,21 @@ VALUES
 ('6493', 4, '?', TRUE, TRUE, FALSE, FALSE, 'Arrived'),
 ('9212', 5, '?', TRUE, TRUE, FALSE, FALSE, 'Arrived');
 
+-- Insert records into Departure table
 INSERT INTO Project1.Departure (Flight_No, Departing_To, Scheduled_Departure, Estimated_Departure, Departure_Terminal, Departure_Gate)
 VALUES
 ('2473', 1, '2023-04-27 09:55:00', '2023-04-27 10:25:00', 'T1', 'B9'),
 ('1306', 2, '2023-04-27 09:55:00', '2023-04-27 11:01:00', 'T3', 'E3'),
 ('1848', 4, '2023-04-27 10:00:00', '2023-04-27 15:30:00', 'T1', 'B24');
 
+-- Insert records into Arrival table
 INSERT INTO Project1.Arrival (Flight_No, Arriving_From, Scheduled_Arrival, Estimated_Arrival, Arrival_Gate, Arrival_Terminal)
 VALUES
 ('1513', 4, '2023-04-27 09:50:00', '2023-04-27 09:46:00', 'E6', 'T3'),
 ('6493', 4, '2023-04-27 09:50:00', '2023-04-27 09:46:00', 'E6', 'T3'),
 ('9212', 4, '2023-04-27 09:50:00', '2023-04-27 09:46:00', 'E6', 'T3');
 
+-- Insert records into Baggage_Claim table
 INSERT INTO Project1.Baggage_Claim (Baggage_Claim_ID, Flight_No, Carousel)
 VALUES
     (1, '2473', NULL),
